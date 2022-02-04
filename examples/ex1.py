@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
+#taking text from a website using beautiful soup and then writing to a csv file
+
 page_to_scrape = requests.get('https://quotes.toscrape.com')
 
 soup = BeautifulSoup(page_to_scrape.text, 'html.parser')

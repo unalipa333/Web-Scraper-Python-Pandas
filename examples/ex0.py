@@ -1,5 +1,5 @@
-import requests
-
+import requests  #this is a library
+ #taking text from a website using requests
 
 payload = {'page':2, 'count': 25}
 r = requests.get('https://httpbin.org/get', params=payload)
