@@ -1,13 +1,14 @@
+from matplotlib.pyplot import title
 import requests
 from bs4 import BeautifulSoup
 
 
 
 
-def extract(page):
+def extract():
     headers = {'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36'}
 
-    url = f'https://www.indeed.com/jobs?q=python%20developer&l=Orange%20County,%20CA&start={page}&vjk=7f05dae8482c5b6d'
+    url = 'https://quotes.toscrape.com/'
 
     r = requests.get(url, headers)
 
@@ -15,8 +16,23 @@ def extract(page):
 
     return soup
 
-  #  return r.status_code          # testing to see if code runs
+    #return print(r.status_code)          # testing to see if code runs
 
-#print(extract(20))                # testing to see if code runs 200 code is good
+#extract()                # testing to see if code runs 200 code is good
 
-c = extract(20)
+
+def transform(soup):
+    table = soup.find_all('table', class_ = 'jobCard_mainContent')
+
+    #return len(table)   #testing returns number of matches
+
+    for item in table:
+        item1 = item.find('a')
+        print(item1)
+    return    
+
+
+#c = extract(20)
+# print(transform(c)) # testing the output
+
+#transform(c)
