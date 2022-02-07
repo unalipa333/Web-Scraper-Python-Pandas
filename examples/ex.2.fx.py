@@ -22,17 +22,16 @@ def extract():
 
 
 def transform(soup):
-    table = soup.find_all('table', class_ = 'jobCard_mainContent')
+    quotes = soup.find_all('div', class_ = 'quote')
 
-    #return len(table)   #testing returns number of matches
+    #return len(quotes)  # returns quantity of objects
 
-    for item in table:
-        item1 = item.find('a')
+
+    for item in quotes:            
+        item1 = item.find('span').text
         print(item1)
-    return    
+    # return
 
+c = extract()
+print(transform(c))    # test that it runs
 
-#c = extract(20)
-# print(transform(c)) # testing the output
-
-#transform(c)
