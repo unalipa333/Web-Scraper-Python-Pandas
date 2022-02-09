@@ -33,5 +33,5 @@ def transform(soup):
     # return
 
 c = extract()
-print(transform(c))    # test that it runs
-
+d = transform(c)    # test that it runs
+print(d)
