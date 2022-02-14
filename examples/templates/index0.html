@@ -4,9 +4,16 @@
     </head>
     <body>
         <h1>hi mijo</h1>
+
+        <p>{{value}}</p>
         <form class = 'grid' action='/result' method='POST'>
 
             <center> 
+                {% if name  %}
+                <h3 style="color: blue;"> Hello {{name}}, how are you?</h3>
+                {% endif %}
+
+
             </center>
 
             <label for="Name"> Enter Your Name: </label>

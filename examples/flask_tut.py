@@ -1,26 +1,33 @@
-from aem import app
+
+from crypt import methods
+from django.http import request
 from flask import Flask, redirect, url_for, render_template
 from ex2fx import *
 
 
 app = Flask(__name__)
 
-c = extract()
-d =  transform(c)
+
 
 @app.route('/')   #decorator. allows page to be displayed. catches all pages
-def home():         #
-    return render_template('index.0.html', d = d)
+def home(): 
+    c = extract()
+    d = transform(c)
+    animal = 'dog'        #
+    return render_template('index0.html', value= animal)
 
-@app.route('/result/')
+@app.route('/result', methods= ['POST', 'GET'])
 def result():
-    return render_template
+    output = request()     #having an issue importing this from flask. only imports from django
+    name = print(output['name'])
+
+    return render_template('index0.html',name = 'name')
 
 
 @app.route('/pizza/')   # redirect test page
 def pizza():
-    return redirect(url_for('home'))
+    return render_template('quotes.html')
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug= True)

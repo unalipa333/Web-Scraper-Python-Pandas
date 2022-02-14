@@ -1,8 +1,7 @@
-from matplotlib.pyplot import title
+
 import requests
 from bs4 import BeautifulSoup
-
-
+import pandas as pd 
 
 
 def extract():
@@ -23,15 +22,33 @@ def extract():
 
 def transform(soup):
     quotes = soup.find_all('div', class_ = 'quote')
+    
 
     #return len(quotes)  # returns quantity of objects
 
 
     for item in quotes:            
-        item1 = item.find('span').text
-        print(item1)
-    # return
+       quote = item.find('span').text
+       author = item.find('small', class_= 'author').text
+       tags = item.find('div', class_='tags').text.strip().replace('\n','')
+       #print(quote,author,tags)
+       dict_quotes = {
+           'quote': quote,
+           'author': author,
+           'tags': tags
+
+       }
+       list_quotes.append(dict_quotes)
+
+    return   
+
+list_quotes = [] 
 
 c = extract()
-d = transform(c)    # test that it runs
-print(d)
+transform(c)    # test that it runs
+
+df = pd.DataFrame(list_quotes)
+
+print(df)
+
+df.to_html('quotes.html')
