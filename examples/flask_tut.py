@@ -26,7 +26,7 @@ def result():
    
 @app.route('/pizza/')   # redirect test page
 def pizza():
-    return render_template('quotes.html')
+    return render_template('quotes.html') 
 
 
 if __name__ == "__main__":
