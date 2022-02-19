@@ -49,6 +49,6 @@ transform(c)    # test that it runs
 
 df = pd.DataFrame(list_quotes)
 
-print(df)
+#print(df)
 
 df.to_html('quotes.html')

@@ -23,7 +23,7 @@ def result():
 
     return render_template('index0.html',name = 'name')
 
-
+   
 @app.route('/pizza/')   # redirect test page
 def pizza():
     return render_template('quotes.html')
