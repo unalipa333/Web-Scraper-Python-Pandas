@@ -13,7 +13,7 @@ app = Flask(__name__)
 def home(): 
     c = extract()
     d = transform(c)
-    animal = 'dog'        #
+    animal = 'This message is passed in as a variable from .py using the render_template method'        #
     return render_template('index0.html', value= animal)
 
 @app.route('/result', methods= ['POST', 'GET'])
@@ -30,4 +30,4 @@ def pizza():
 
 
 if __name__ == "__main__":
-    app.run(debug= True)
+    app.run()
