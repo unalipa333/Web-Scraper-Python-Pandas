@@ -13,8 +13,8 @@ app = Flask(__name__)
 def home(): 
     c = extract()
     d = transform(c)
-    animal = 'dog'        #
-    return render_template('index0.html', value= animal)
+    test = 'work in progress'        #
+    return render_template('index0.html', value= test)
 
 @app.route('/result', methods= ['POST', 'GET'])
 def result():

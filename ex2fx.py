@@ -51,4 +51,4 @@ df = pd.DataFrame(list_quotes)
 
 #print(df)
 
-df.to_html('quotes.html')
+#df.to_html('quotes.html')
