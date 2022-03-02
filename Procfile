@@ -1,3 +1,1 @@
-web: gunicorn app:app
-
-
+web: gunicorn python flask_tut.py
