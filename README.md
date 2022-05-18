@@ -1,4 +1,4 @@
-# Web-Scraper-Python-0
+# Web-Scraper-Python-0 Used bs4 pandas and python
 
 Thanks for visiting!
 
